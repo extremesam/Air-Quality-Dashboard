@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Quality Intelligence Dashboard</title>
+<meta name="description" content="Live air quality monitoring across Nigerian cities — AQI, pollutant breakdown, weather, and historical trends.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="clarity-strip"></div>
+
+<header class="top">
+  <div class="container row">
+    <div class="wordmark"><span class="dot"></span>ATMOS<small>&nbsp;// AIR QUALITY OBSERVATORY</small></div>
+    <div class="controls">
+      <span id="last-updated">LAST SYNC —</span>
+      <select id="city-select"></select>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-city" id="hero-city">—</div>
+      <div class="hero-reading">
+        <div class="hero-number" id="hero-aqi">—</div>
+        <div class="hero-category" id="hero-category">—</div>
+      </div>
+      <div class="hero-recommendation" id="hero-recommendation"></div>
+    </div>
+    <div class="hero-scale">
+      <div class="hero-scale-bar">
+        <span style="background:#4CD97B"></span>
+        <span style="background:#E8D34C"></span>
+        <span style="background:#F0973B"></span>
+        <span style="background:#E85C4C"></span>
+        <span style="background:#B564D4"></span>
+        <span style="background:#8A3D4E"></span>
+      </div>
+      <div class="hero-scale-labels"><span>0</span><span>50</span><span>100</span><span>150</span><span>200</span><span>300</span><span>500</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- KPI row -->
+  <div class="kpi-row" id="kpi-row"></div>
+
+  <!-- Map + Live/Health -->
+  <div class="panel-grid">
+    <div class="panel">
+      <div class="module-label">Interactive AQI Map</div>
+      <div id="map"></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div>
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="module-label">Live Reading</div>
+        <div class="live-card">
+          <div class="value" id="live-aqi">—</div>
+          <div class="label" id="live-label">—</div>
+          <div class="timestamp" id="live-timestamp">—</div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="module-label">Health Risk Indicator</div>
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--text-muted);">
+          AQI <span id="health-aqi" style="color:var(--text-primary);font-weight:700;">—</span> ·
+          Status <span id="health-status" style="color:var(--text-primary);font-weight:700;">—</span>
+        </div>
+        <div class="recommendation-box" id="health-recommendation"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pollutant breakdown + Weather -->
+  <div class="panel-grid">
+    <div class="panel">
+      <div class="module-label">Pollutant Breakdown</div>
+      <canvas id="pollutant-chart" height="140"></canvas>
+    </div>
+    <div class="panel">
+      <div class="module-label">Weather Feed</div>
+      <div class="weather-grid">
+        <div class="weather-item"><div class="w-label">Temperature</div><div class="w-value" id="w-temp">—</div></div>
+        <div class="weather-item"><div class="w-label">Humidity</div><div class="w-value" id="w-humidity">—</div></div>
+        <div class="weather-item"><div class="w-label">Wind Speed</div><div class="w-value" id="w-wind">—</div></div>
+        <div class="weather-item"><div class="w-label">Pressure</div><div class="w-value" id="w-pressure">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AQI history -->
+  <div class="panel full" style="margin-bottom:24px;">
+    <div class="module-label">AQI History</div>
+    <div class="range-toggle" id="range-toggle">
+      <button data-range="24h">24H</button>
+      <button data-range="7d" class="active">7D</button>
+      <button data-range="all">ALL</button>
+    </div>
+    <canvas id="history-chart" height="90"></canvas>
+  </div>
+
+  <!-- City comparison -->
+  <div class="panel full" style="margin-bottom:24px;">
+    <div class="module-label">City Comparison</div>
+    <table class="compare" id="compare-table">
+      <thead>
+        <tr><th>City</th><th>AQI</th><th>PM2.5</th><th>PM10</th><th>CO</th><th>NO2</th><th>SO2</th><th>O3</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Historical trends -->
+  <div class="panel full" style="margin-bottom:24px;">
+    <div class="module-label">Historical Trends</div>
+    <div class="tabs" id="trend-tabs">
+      <button data-trend="daily" class="active">Daily</button>
+      <button data-trend="weekly">Weekly</button>
+      <button data-trend="monthly">Monthly</button>
+    </div>
+    <div class="tab-panel active" id="trend-daily"><canvas id="daily-chart" height="90"></canvas></div>
+    <div class="tab-panel" id="trend-weekly"><canvas id="weekly-chart" height="90"></canvas></div>
+    <div class="tab-panel" id="trend-monthly"><canvas id="monthly-chart" height="90"></canvas></div>
+  </div>
+
+  <!-- Hotspots -->
+  <div class="panel full" style="margin-bottom:40px;">
+    <div class="module-label">Pollution Hotspots — Ranked</div>
+    <div class="hotspot-list" id="hotspot-list"></div>
+  </div>
+
+</main>
+
+<footer>
+  BUILT WITH VANILLA JS · CHART.JS · LEAFLET — DATA VIA OPENWEATHER AIR POLLUTION &amp; WEATHER APIs
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="aqi.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
