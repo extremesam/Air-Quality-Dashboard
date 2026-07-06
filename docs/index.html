@@ -86,7 +86,7 @@
   <div class="panel-grid">
     <div class="panel">
       <div class="module-label">Pollutant Breakdown</div>
-      <canvas id="pollutant-chart" height="140"></canvas>
+      <div class="chart-wrap"><canvas id="pollutant-chart"></canvas></div>
     </div>
     <div class="panel">
       <div class="module-label">Weather Feed</div>
@@ -107,7 +107,7 @@
       <button data-range="7d" class="active">7D</button>
       <button data-range="all">ALL</button>
     </div>
-    <canvas id="history-chart" height="90"></canvas>
+    <div class="chart-wrap"><canvas id="history-chart"></canvas></div>
   </div>
 
   <!-- City comparison -->
@@ -129,9 +129,9 @@
       <button data-trend="weekly">Weekly</button>
       <button data-trend="monthly">Monthly</button>
     </div>
-    <div class="tab-panel active" id="trend-daily"><canvas id="daily-chart" height="90"></canvas></div>
-    <div class="tab-panel" id="trend-weekly"><canvas id="weekly-chart" height="90"></canvas></div>
-    <div class="tab-panel" id="trend-monthly"><canvas id="monthly-chart" height="90"></canvas></div>
+    <div class="tab-panel active" id="trend-daily"><div class="chart-wrap"><canvas id="daily-chart"></canvas></div></div>
+    <div class="tab-panel" id="trend-weekly"><div class="chart-wrap"><canvas id="weekly-chart"></canvas></div></div>
+    <div class="tab-panel" id="trend-monthly"><div class="chart-wrap"><canvas id="monthly-chart"></canvas></div></div>
   </div>
 
   <!-- Hotspots -->

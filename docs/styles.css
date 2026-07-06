@@ -264,6 +264,21 @@ select#city-select {
 }
 .panel.full { grid-column: 1 / -1; }
 
+/* Chart container: fixed height is required so Chart.js's
+   maintainAspectRatio:false doesn't enter a resize feedback loop with
+   its parent (canvas measures parent -> parent grows to fit -> repeat) */
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+.chart-wrap canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 #map { height: 420px; border-radius: var(--radius); overflow: hidden; }
 
 .legend {
