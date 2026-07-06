@@ -5,3 +5,4 @@ folium>=0.16
 streamlit-folium>=0.22
 requests>=2.32
 schedule>=1.2
+matplotlib>=3.9
