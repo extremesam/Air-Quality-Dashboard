@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,8 +35,8 @@ jobs:
 
       - name: Commit updated data
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Samson Adeyomoye"
+          git config user.email "mosadolu504@gmail.com"
           git add data/air_quality.csv data/history.csv docs/data/latest.json docs/data/history.json
           git diff --staged --quiet || git commit -m "Hourly data update"
-          git push
+          git push origin main
