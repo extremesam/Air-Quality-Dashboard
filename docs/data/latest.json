@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-08-15T03:30:15",
+    "timestamp": "2026-08-15T04:20:07",
     "city": "Lagos",
     "lat": 6.5244,
     "lon": 3.3792,
@@ -12,31 +12,31 @@
     "no2": 0.06,
     "so2": 0.28,
     "o3": 33.89,
-    "temperature": 24.66,
+    "temperature": 24.62,
     "humidity": 86.0,
-    "wind_speed": 4.86,
-    "pressure": 1014.0
+    "wind_speed": 4.52,
+    "pressure": 1013.0
   },
   {
-    "timestamp": "2026-08-15T03:30:15",
+    "timestamp": "2026-08-15T04:20:07",
     "city": "Abuja",
     "lat": 9.0765,
     "lon": 7.3986,
-    "aqi": 51.0,
-    "category": "Moderate",
-    "pm2_5": 12.13,
-    "pm10": 16.66,
-    "co": 438.62,
-    "no2": 2.12,
-    "so2": 0.31,
-    "o3": 12.3,
+    "aqi": 48.0,
+    "category": "Good",
+    "pm2_5": 11.55,
+    "pm10": 15.61,
+    "co": 428.23,
+    "no2": 1.96,
+    "so2": 0.29,
+    "o3": 12.22,
     "temperature": 21.33,
     "humidity": 98.0,
     "wind_speed": 0.51,
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-15T03:30:15",
+    "timestamp": "2026-08-15T04:20:07",
     "city": "Port Harcourt",
     "lat": 4.8156,
     "lon": 7.0498,
@@ -54,7 +54,7 @@
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-15T03:30:16",
+    "timestamp": "2026-08-15T04:20:08",
     "city": "Kano",
     "lat": 12.0022,
     "lon": 8.592,
@@ -66,13 +66,13 @@
     "no2": 3.61,
     "so2": 0.55,
     "o3": 18.29,
-    "temperature": 24.3,
-    "humidity": 78.0,
-    "wind_speed": 4.08,
+    "temperature": 24.01,
+    "humidity": 79.0,
+    "wind_speed": 3.91,
     "pressure": 1012.0
   },
   {
-    "timestamp": "2026-08-15T03:30:16",
+    "timestamp": "2026-08-15T04:20:08",
     "city": "Ibadan",
     "lat": 7.3775,
     "lon": 3.947,
@@ -90,7 +90,7 @@
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-15T03:30:16",
+    "timestamp": "2026-08-15T04:20:09",
     "city": "Kaduna",
     "lat": 10.5222,
     "lon": 7.4383,
@@ -108,7 +108,7 @@
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-15T03:30:17",
+    "timestamp": "2026-08-15T04:20:09",
     "city": "Ogun (Ode-Remo)",
     "lat": 6.85,
     "lon": 3.6167,
