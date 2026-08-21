@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-08-21T13:37:10",
+    "timestamp": "2026-08-21T14:24:15",
     "city": "Lagos",
     "lat": 6.5244,
     "lon": 3.3792,
@@ -18,7 +18,7 @@
     "pressure": 1012.0
   },
   {
-    "timestamp": "2026-08-21T13:37:11",
+    "timestamp": "2026-08-21T14:24:16",
     "city": "Abuja",
     "lat": 9.0765,
     "lon": 7.3986,
@@ -36,7 +36,7 @@
     "pressure": 1013.0
   },
   {
-    "timestamp": "2026-08-21T13:37:11",
+    "timestamp": "2026-08-21T14:24:16",
     "city": "Port Harcourt",
     "lat": 4.8156,
     "lon": 7.0498,
@@ -54,7 +54,7 @@
     "pressure": 1012.0
   },
   {
-    "timestamp": "2026-08-21T13:37:11",
+    "timestamp": "2026-08-21T14:24:16",
     "city": "Kano",
     "lat": 12.0022,
     "lon": 8.592,
@@ -72,7 +72,7 @@
     "pressure": 1012.0
   },
   {
-    "timestamp": "2026-08-21T13:37:12",
+    "timestamp": "2026-08-21T14:24:16",
     "city": "Ibadan",
     "lat": 7.3775,
     "lon": 3.947,
@@ -90,7 +90,7 @@
     "pressure": 1012.0
   },
   {
-    "timestamp": "2026-08-21T13:37:12",
+    "timestamp": "2026-08-21T14:24:16",
     "city": "Kaduna",
     "lat": 10.5222,
     "lon": 7.4383,
@@ -108,7 +108,7 @@
     "pressure": 1013.0
   },
   {
-    "timestamp": "2026-08-21T13:37:12",
+    "timestamp": "2026-08-21T14:24:17",
     "city": "Ogun (Ode-Remo)",
     "lat": 6.85,
     "lon": 3.6167,
