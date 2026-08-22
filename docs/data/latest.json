@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-08-22T03:33:50",
+    "timestamp": "2026-08-22T04:22:14",
     "city": "Lagos",
     "lat": 6.5244,
     "lon": 3.3792,
@@ -12,13 +12,13 @@
     "no2": 0.08,
     "so2": 0.22,
     "o3": 48.34,
-    "temperature": 25.12,
-    "humidity": 94.0,
-    "wind_speed": 2.57,
+    "temperature": 24.85,
+    "humidity": 90.0,
+    "wind_speed": 3.92,
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-22T03:33:50",
+    "timestamp": "2026-08-22T04:22:14",
     "city": "Abuja",
     "lat": 9.0765,
     "lon": 7.3986,
@@ -36,7 +36,7 @@
     "pressure": 1015.0
   },
   {
-    "timestamp": "2026-08-22T03:33:50",
+    "timestamp": "2026-08-22T04:22:14",
     "city": "Port Harcourt",
     "lat": 4.8156,
     "lon": 7.0498,
@@ -54,7 +54,7 @@
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-22T03:33:50",
+    "timestamp": "2026-08-22T04:22:14",
     "city": "Kano",
     "lat": 12.0022,
     "lon": 8.592,
@@ -72,7 +72,7 @@
     "pressure": 1013.0
   },
   {
-    "timestamp": "2026-08-22T03:33:51",
+    "timestamp": "2026-08-22T04:22:14",
     "city": "Ibadan",
     "lat": 7.3775,
     "lon": 3.947,
@@ -90,7 +90,7 @@
     "pressure": 1014.0
   },
   {
-    "timestamp": "2026-08-22T03:33:51",
+    "timestamp": "2026-08-22T04:22:15",
     "city": "Kaduna",
     "lat": 10.5222,
     "lon": 7.4383,
@@ -108,7 +108,7 @@
     "pressure": 1015.0
   },
   {
-    "timestamp": "2026-08-22T03:33:51",
+    "timestamp": "2026-08-22T04:22:15",
     "city": "Ogun (Ode-Remo)",
     "lat": 6.85,
     "lon": 3.6167,
